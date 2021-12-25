@@ -6,10 +6,12 @@
     <h1>Pets</h1>
     <div class="card-container">
     {% for pet in pets %}
-        <div class=card>
-            <img src="{{pet.photo_url}}" alt="{pet.name}}" width="200" height="200">
-            <p>{{pet.name}} {% if pet.available %}  <strong> is available</strong>    {% endif %}</p>
-        </div>
+        <a href="/{{pet.id}}/edit">
+            <div class=card>
+                <img src="{{pet.photo_url}}" alt="{pet.name}}" width="200" height="200">
+                <p>{{pet.name}} {% if pet.available %}  <strong> is available</strong>    {% endif %}</p>
+            </div>
+        </a>
     {% endfor %}
     </div>
     <a href="/add" class="btn btn-primary">Add a Pet</a>
