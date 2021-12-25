@@ -24,6 +24,9 @@ def show_pets():
 
 @app.route("/add", methods=["GET", "POST"])
 def add_pet():
+    """
+        shows pet add form and handle its submit action
+    """
     form = AddPetForm()
     
     if form.validate_on_submit():
@@ -42,6 +45,7 @@ def add_pet():
     
 @app.route("/<int:petId>/edit", methods=["GET", "POST"])
 def edit_pet(petId):
+    """ shows pet edit form and handle its submit action """
     pet = Pet.query.get_or_404(petId)
     form = AddPetForm(obj=pet)
     

@@ -8,7 +8,7 @@ def connect_db(app):
     db.init_app(app)
 
 class Pet(db.Model):
-    """ User """
+    """ Pet model """
     __tablename__ = "pets"
     id = db.Column(db.Integer,
                     primary_key=True,

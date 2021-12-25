@@ -3,8 +3,9 @@
 {% block title %}Show Pets{% endblock %}
 
 {% block content %}
-
-<form id="pet-add-form" method="post">
+<h2>Add a new pet</h2>
+<form id="pet-add-form" method="post" >
+    <div class="form-group">
     {{ form.hidden_tag() }} <!-- add type-hidden form fields for validation -->
 
     {% for field in form if field.widget.input_type != 'hidden' %}
@@ -21,7 +22,7 @@
     
     <a href="/" class="btn btn-outline-info">Cancel</a>
     <button type="submit" class="btn btn-success">Add</button>
-
+</div>
 </form>
 
 {% endblock %}
